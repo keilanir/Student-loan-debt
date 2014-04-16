@@ -1,0 +1,96 @@
+/* TEST FILE */
+
+body {
+	font-family: 'Helvetica Neue LT', Helvetica, Arial, sans-serif;
+	/* always set a base font and font-size */
+	font-size: 95%;
+	color: #000;
+	background: #fff;
+	}
+
+#wrapper {
+	margin: 20px auto;
+	width: 80%;;
+	}
+	
+#graph_container {
+	width: 50%;
+	float: right;
+	margin-left: 3em;
+	}
+	
+#form_container {
+	width: 50%;
+	}
+
+h1 {
+	font-size: 3em;
+	padding-bottom: .5em;
+	}
+	
+p {
+	padding-bottom: .5em;
+	}
+
+/* links */
+
+a:focus {
+	outline: 2px solid #069;
+	}
+a:link, a: active, a:visited {
+	color: #00c;
+	text-decoration: underline;
+	}
+a:hover {
+	color: #00f;
+	text-decoration: none;
+	}
+	
+/* GRAPH STYLES */
+	
+#axes {
+	height: 300px;
+	width: 150px;
+	background-color: #ddd;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+	position: relative;
+	}
+
+#axes_bottom {
+	height: 300px;
+	width: 150px;
+	background-color: #ddd;
+	border-left: 1px solid #000;
+	border-bottom: 1px solid #000;
+	position: relative;
+	}
+	
+#income_bar {
+	position: absolute;
+	bottom: 0;
+	height: 0;
+	width: 100px;
+	background-color: #96E655;
+	margin-left: 25px;
+	}
+	
+#bar_container {
+	position: absolute;
+	top: 0;
+	height: 0;
+	width: 100px;
+	margin-left: 25px;
+	}
+
+#rent_bar {
+	height: 0;
+	width: 100px;
+	background-color: #E65555;
+	}
+	
+#expenses_bar {
+	height: 0;
+	width: 100px;
+	background-color: #E87474;
+	}
