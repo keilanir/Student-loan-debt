@@ -21,13 +21,13 @@ body {
 	position: relative;
 	}
 	
-#form_container {
+/*#form_container {
 	width: 20em;
 	height: 25em;
 	position: relative;
 	background-color: #3498db;
 	overflow: hidden;
-	border-radius: 5em;
+	border-radius: 5em; // add webkit and moz
 	}
 
 .panel {
@@ -37,7 +37,7 @@ body {
 	padding: 2em;
 	font-size: 2em;
 	color: #fff;
-	}
+	}*/
 
 #sub-choices, #unsub-choices {
 	font-size: .5em;

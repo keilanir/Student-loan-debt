@@ -34,6 +34,8 @@ $(document).ready(function(){
 		$('#sub-choices').hide();
 	});
 	
+	// additional interest rates: http://www.asa.org/basics/loans/interest-rates/student-loan-interest-rates.aspx
+	
 	// INTEREST:
 	$('#get_interest').click(function(){
 		var subMonth = $('#sub-month').find('option:selected').val();
@@ -108,8 +110,6 @@ $(document).ready(function(){
 			}
 	});
 		
-	var interest_val = (loans * interest) / 365.25;
-
 	//LOANS function - defines loans
 	$('#loans').change(function (){
 		loans = $('#loans').val();
@@ -179,6 +179,8 @@ $(document).ready(function(){
 			1000);
 		$('#income_bar').append('<p class="label">$' + income + '</p>');
 		$('#loans_bar').append('<p class="label">$' + loans + '</p>');
+		interest_val = (loans * interest) / 365.25;
+
 	});
 
 	// BUTTON FOR DEBUGGING
@@ -188,5 +190,6 @@ $(document).ready(function(){
 		
 	var percent_spent = loans / income * 100;
 	$('#percent_spent').append(percent_spent);
-	
+
+
 });
