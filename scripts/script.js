@@ -149,6 +149,7 @@ $(document).ready(function(){
 	};
 	
 	// additional interest rates: http://www.asa.org/basics/loans/interest-rates/student-loan-interest-rates.aspx
+	// http://www.debtfreeadventure.com/how-student-loan-interest-is-calculated-and-why-it-varies-from-month-to-month/
 	
 // INTEREST:
 	$('.get-rate').click(function(){
