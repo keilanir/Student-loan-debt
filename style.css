@@ -1,7 +1,7 @@
 body {
 	font-family: 'Nunito', Helvetica, Arial, sans-serif;
 	/* always set a base font and font-size */
-	font-size: 100%;
+	font-size: 10px;
 	color: #000;
 	background: #fff;
 	font-weight: 300;
@@ -9,42 +9,50 @@ body {
 
 #wrapper {
 	margin: 20px auto;
-	width: 70%;;
+	width: 80%;;
 	}
 	
 #graph_container {
 	width: 25%;
 	float: right;
-	margin-left: 1em;
-	margin-right: 30%;
 	background-color: #fff;
 	position: relative;
+	margin-right: 10em;
 	}
 	
-/*#form_container {
-	width: 20em;
-	height: 25em;
+#form_container {
+	width: 40%;
+	min-width: 250px;
 	position: relative;
 	background-color: #3498db;
-	overflow: hidden;
-	border-radius: 5em; // add webkit and moz
+	border-radius: 2em; 
+	-moz-border-radius: 2em;
+	-webkit-border-radius: 2em; 
+	text-align: center;
+	font-size: 2em;
+	color: #fff;
+	padding: 1em .5em 1em .5em;
+	margin-left: 7em;
+	}
+
+#sub-choices, #unsub-choices {
+	font-size: .7em;
+	background-color: #ecf0f1;
+	color: #3498db;
+	border-radius: 1em; 
+	-moz-border-radius: 1em;
+	-webkit-border-radius: 1em; 
+	width: 70%;
+	margin: 0 auto 0 auto;
+	padding: 1em 0 1em 0;
 	}
 
 .panel {
-	background-color: #3498db;
-	height: 15em;
-	text-align: center;
-	padding: 2em;
-	font-size: 2em;
-	color: #fff;
-	}*/
-
-#sub-choices, #unsub-choices {
-	font-size: .5em;
+	padding-bottom: .5em;
 	}
 
 h1 {
-	font-size: 2.5em;
+	font-size: 3.5em;
 	font-weight: 700;
 	padding-bottom: .3em;
 	padding-top: .4em;
@@ -52,7 +60,7 @@ h1 {
 	color: #3498db;
 	}
 
-h3 {font-size: 1em;}
+h3 {font-size: 2em;}
 	
 #head_container {
 	background-color: #ecf0f1;
@@ -60,23 +68,66 @@ h3 {font-size: 1em;}
 	margin-bottom: 1em;
 	}
 	
-p {padding-bottom: .5em;}
+p {
+	font-size: 1em;
+	padding: 0 2.5em .5em 2.5em;
+	}
 
-#facts p {font-size: 50%; font-weight: 300;}
-span {font-weight: 700; color: #b03a2e;}
+.fact {font-size: .8em; font-weight: 300; color: #d2e7ff;}
+span {font-weight: 700; color: #2c3e50; font-size: 1.5em;}
 
+label:hover {
+	color: #3498db;
+	background-color: #ecf0f1;
+	padding: 0 .5em 0 .5em;
+	border-radius: 1em;
+	}
+.description {
+	font-size: .8em;
+	color: #d2e7ff;
+	text-align: left;
+	}
+
+.dolla {
+	position: relative; 
+	left: 1.4em; 
+	font-size: .6em; 
+	color: #777;}
+	
+.dolla_input {
+	padding: .3em 1em .3em 1.4em; 
+	font-family: 'Nunito';
+	border: 1px solid #ccc;
+	border-radius: 1em;
+	color: #3498db;
+	font-size: .7em;
+	}
+
+button {
+	font-family: 'Nunito';
+	font-weight: 300;
+	border: 1px solid #ccc;
+	border-radius: .5em;
+	background-color: #ecf0f1;
+	}
+
+button:hover {
+	background-color: #ccc;
+	}
 
 /* links */
 
+a { color: #fff; text-decoration: none;}
 a:focus {
-	outline: 2px solid #069;
+	outline: 2px solid #069
+	text-decoration: none;
 	}
 a:link, a: active, a:visited {
-	color: #00c;
-	text-decoration: underline;
+	color: #fff;
+	text-decoration: none;
 	}
 a:hover {
-	color: #00f;
+	color: #ff7c73;
 	text-decoration: none;
 	}
 	
@@ -84,19 +135,21 @@ a:hover {
 	
 #axes {
 	height: 300px;
-	width: 200px;
+	width: 20em;
 	border-left: 1px solid #888;
 	border-bottom: 1px solid #888;
 	position: relative;
 	background-color: #ecf0f1;
+	overflow: hidden;
 	}
 	
 #axes_bottom {
 	height: 300px;
-	width: 200px;
+	width: 20em;
 	border-left: 1px solid #888;
 	position: relative;
 	background-color: #ecf0f1;
+	overflow: hidden;
 	}
 	
 #income_bar {
@@ -119,29 +172,47 @@ a:hover {
 #rent_bar {
 	height: 0;
 	width: 150px;
-	background-color: #e74c3c;
+	background-color: #a3362a;
 	}
 	
 #expenses_bar {
 	height: 0;
 	width: 150px;
-	background-color: #a3362a;
+	background-color: #78271f;
 	}
 	
-#loans_bar {
+#payments_bar {
 	height: 0;
 	width: 150px;
-	background-color: #78271f;
+	background-color: #e74c3c;
 	}
 
 .label {
-	text-align: center;
 	padding-top: 1em;
+	text-align: center;
 	color: #fff;
-	font-weight: 300;
-	font-size: .9em;
+	font-weight: 400;
+	font-size: 1.3em;
 	}
 
-#origin {position: absolute; top: 290px; left: -15px; color: #3498db;}
-#max {position: absolute; top: -5px; left: -50px; color: #3498db;}
-#min {position: absolute; bottom: -5px; left: -55px; color: #3498db;}
+#origin {
+	position: absolute; 
+	top: 290px; 
+	left: -15px; 
+	color: #3498db; 
+	font-size: 1.5em;
+	}
+#max {
+	position: absolute; 
+	top: -5px; 
+	left: -50px; 
+	color: #3498db;
+	font-size: 1.5em;
+	}
+#min {
+	position: absolute; 
+	bottom: -5px; 
+	left: -55px; 
+	color: #3498db;
+	font-size: 1.5em;
+	}

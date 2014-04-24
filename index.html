@@ -15,38 +15,36 @@
 	<div id="graph_container">
 		<div id="axes">
 			<div id="income_bar"></div>
+			<div id="loans_bar"></div>
 		</div>
 		<div id="axes_bottom">
 			<div id="bar_container">
+				<div id="payments_bar"></div>
 				<div id="rent_bar"></div>
 				<div id="expenses_bar"></div>
-				<div id="loans_bar"></div>
 			</div>
 		</div>
 		<div id="origin">0</div>
-		<div id="max">$100k</div>
-		<div id="min">-$100k</div>
+		<div id="max">100%</div>
+		<div id="min">-100%</div>
 	</div>
-	<div id="form_container">
-	
-	<div id="panels">
-	
+	<div id="form_container"><form id="myForm">	
 		<div class="panel">
 		<label for="income">What is your income?</label><br>
-		<input id="income" type="text" placeholder="annual income" value="">
-		<br>
-		<button class="next"> > </button>
+			<p class="description"><a href="http://www.payscale.com/college-salary-report-2014/majors-that-pay-you-back" target="blank">PayScale's 2013-2014 College Salary Report</a> gives some statistics about average income of recent college graduates by major.</p>
+		<p><span class="dolla">$</span><input id="income" class="dolla_input" type="text" placeholder="annual income" value=""><button type="reset">Reset</button></p>
 		</div>
 	
 		<div class="panel">
-		<label for="loans">What is your student loan debt?</label><br>
-		<input id="loans" type="text" placeholder="student loan total" value="">
-		<br>
-		<button class="next"> > </button>
+		<label for="loans">What is your total student loan debt?</label><br>
+			<p class="description">This calculator assumes your loans are all one type: either subsidized or unsubsidized federal loans. Information on other types of federal loans can be found at <a href="http://studentaid.ed.gov/types/loans">studentaid.ed.gov</a>.</p>
+		<p><span class="dolla">$</span><input id="loans" class="dolla_input" type="text" placeholder="student loan total" value=""></p>
 		</div>
-		
+	</form>
 		<div class="panel" id="interest_panel">
-			<p>What is your interest rate?</p>
+		<label>What is your interest rate?</label><br>
+			<p class="description">If your loans are not federal Stafford loans, find your interest rate <a href="http://studentaid.ed.gov/types/loans/interest-rates#what-are-the-interest-rates-of-federal-student-loans">here</a> and input your rate in the text field.</p>
+			<p class="description">This calculator assumes your loans do not accrue compound interest, but it's not always this simple.</p>
 			<button id="sub">Subsidized</button>
 			<button id="unsub">Unsubsidized</button>
 			<div id="sub-choices">
@@ -76,6 +74,7 @@
 					<option value="2013">2013</option>
 					<option value="2014">2014</option>
 				</select>
+			<button class="get-rate">Get Rate</button>
 			</div>
 			<div id="unsub-choices">
 				<fieldset id="unsub-choices-form">
@@ -85,36 +84,45 @@
 					<p><input type="radio" value="6.8" name="6.8">
 					<label for="6.8">Before July 1, 2013</label></p>
 				</fieldset>
+			<button class="get-rate">Get Rate</button>
 			</div>
-		<button class="next" id="get_interest"> > </button>		
+			<!-- receives value of "interest" variable in jquery --!>
+			<input type="hidden" id="interest" value="3.9">
+			<p class="fact">Your interest rate is <span id="display-rate">3.9%</span></p>
 		</div>
 	
+	<form id="myForm2">
+		<div class="panel">
+		<label for="payment">What is your desired monthly payment?</label><br>
+			<p class="description">Your monthly payment will vary based on your <a href="http://studentaid.ed.gov/repay-loans/understand/plans">repayment plan</a>, but the minimum in the standard repayment plan is $50.</p>
+		<p><span class="dolla">$</span><input id="payments" class="dolla_input" type="text" placeholder="monthly loan payment" value=""></p>
+		<p id="principal-paid" class="fact"></p>
+		</div>
 	
 		<div class="panel">
-		<label for="rent">What are your monthly housing costs?</label><br>
-		<input id="rent" type="text" placeholder="rent or mortgage" value="">
-		<br>
-		<button class="next"> > </button>
+		<label for="rent">What are your monthly housing costs?</label>
+			<p class="description">Your rent or mortgage are unrelated to your student loan costs, but a traditional standard to follow is to spend no more than 30% of your income on housing.</p>
+			<p class="description">How feasible is that standard for you considering your student loan costs?</p>
+		<p><span class="dolla">$</span><input id="rent" class="dolla_input" type="text" placeholder="rent or mortgage" value=""></p>
 		</div>
 	
 		<div class="panel">
 		<label for="expenses">What are your other monthly expenses?</label>
-		<br>
-		<input id="expenses" type="text" placeholder="misc. expenses" value="">
-		<br>
-		<button class="next"> > </button>
+			<p class="description">How much of your income is left to handle your other expenses, like food, utilities, transportation and medical costs?</p>
+			<p class="description">What about leisure expenses?</p>
+		<p><span class="dolla">$</span><input id="expenses" class="dolla_input" type="text" placeholder="misc. expenses" value=""></p>
 		</div>
+	</form>
 		
-		<div class="panel" id="facts">
+		<!--<div class="panel" id="facts">
 			<h3>Statistics</h3>
 			<p>You will accumulate <span id="yearly_interest">$$$</span> in interest this year.</p>
 			<p>You spent $<span id="percent_spent">$</span>of your income on loan payments.</p>
-		</div>
+		</div>--!>
 		
-	</div>
-</div>
+</div></form>
 
-<button id="print">TEST</button>
+<!--<button id="print">TEST</button>--!>
 
 </div>
 </body>
